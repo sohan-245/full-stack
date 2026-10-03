@@ -5,6 +5,9 @@ import Login from './pages/Login'
 import Authentication from './pages/Authentication'
 import DeleteUser from './pages/DeleteUser'
 import UpdateUser from './pages/UpdateUser'
+import UpdateName from './pages/UpdateName'
+import DisplayAll from './pages/DisplayAll'
+
 
 function App() {
   
@@ -18,6 +21,8 @@ function App() {
       <Route path='/me'element={<Authentication/>}/>
       <Route path='/delete-user'element={<DeleteUser/>}/>
       <Route path='/update-user'element={<UpdateUser/>}/>
+      <Route path='/update-name'element={<UpdateName/>}/>
+      <Route path='/display-user'element={<DisplayAll/>}/>
     </Routes>
     </BrowserRouter>
     </>

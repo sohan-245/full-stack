@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Logout from './Logout'
 
 function Authentication(){
     const getMe = async () => {
@@ -16,7 +17,7 @@ function Authentication(){
         getMe()
     }, [])
 return(
-    <h1>hello</h1>
+    <Logout/>
 )
 }
 export default Authentication
