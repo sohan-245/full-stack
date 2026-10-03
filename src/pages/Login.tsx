@@ -17,12 +17,17 @@ function Login(){
         try{
             const response = await fetch('/api/login',{
                 method: 'POST',
+                credentials: 'include',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({email,password}),
             })
             const result = await response.json()
+
+             console.log("Login response:", result)
     
-            if(!response.ok) throw new Error(result.error || 'Unable to create user')
+            if (!response.ok) {
+    throw new Error(result.message || 'Unable to login')
+}
                 setIsLoggedin(true)
         }catch(requestedError){
             setError(requestedError instanceof Error ? requestedError.message:
@@ -48,7 +53,7 @@ function Login(){
             <input type="password" placeholder="Enter passsword" className="border border-gray rounded-sm w-full p-1" value={password} onChange={(event) => setPassword(event.target.value)}/>
         </div>
         <div>
-            <button className="border border-blue-500 rounded-2xl p-1 w-full bg-blue-500 text-white">Sign in</button>
+            <button className="border border-blue-500 rounded-2xl p-1 w-full bg-blue-500 text-white" type="submit"><Linkpage to='/me' text='Sign in'/></button>
         </div>
         <p className="mx-auto">Don't have an account? <Linkpage to='/create-user' text='Register'/></p>
         </form>  
