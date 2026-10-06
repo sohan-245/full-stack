@@ -7,6 +7,7 @@ import DeleteUser from './pages/DeleteUser'
 import UpdateUser from './pages/UpdateUser'
 import UpdateName from './pages/UpdateName'
 import DisplayAll from './pages/DisplayAll'
+import Homepage from './pages/HomePage'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
+      <Route path='/'element={<Homepage/>}/>
       <Route path='/create-user'element={<CreateUser/>}/>
       <Route path='/login'element={<Login/>}/>
       <Route path='/me'element={<Authentication/>}/>

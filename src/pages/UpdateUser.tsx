@@ -1,11 +1,16 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+
 
 function UpdateUser() {
+  const navigate = useNavigate()
+
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
+  const [course, setCourse] = useState("");
 
   const updateUser = async () => {
     try {
@@ -33,6 +38,9 @@ function UpdateUser() {
       }
 
       console.log("Updated:", result.data);
+      navigate('/me')
+
+
 
     } catch (error) {
       console.log("Update error:", error);
@@ -45,6 +53,9 @@ function UpdateUser() {
   };
 
   return (
+    <div className="flex justify-center items-center h-screen w-screen bg-[#E9F0EE]">
+        <div className="flex flex-col p-10 m-8 gap-5 rounded-2xl w-130  bg-gray-100">
+          <strong className="mx-auto">Enter updated details</strong>
     <form
       onSubmit={handleSubmit}
       className="flex flex-col gap-5"
@@ -100,11 +111,25 @@ function UpdateUser() {
           onChange={(event) => setAge(event.target.value)}
         />
       </div>
+       <div>
+        <strong>Course:</strong>
+        <br />
 
-      <button type="submit">
+        <input
+          type="text"
+          placeholder="Enter course"
+          className="border border-gray rounded-sm w-full p-1"
+          value={course}
+          onChange={(event) => setCourse(event.target.value)}
+        />
+      </div>
+
+      <button type="submit" className="border border-blue-500 rounded-2xl p-1 w-full bg-blue-500 text-white">
         Update
       </button>
     </form>
+    </div>
+    </div>
   );
 }
 

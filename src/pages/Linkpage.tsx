@@ -9,7 +9,7 @@ function Linkpage({ to, text }: LinkpageProps) {
   return (
     <Link
       to={to}
-      className="text-red-500 hover:underline"
+      className="text-blue-500 hover:underline"
     >
       {text}
     </Link>

@@ -36,7 +36,7 @@ function DisplayAll() {
       <h1>Users</h1>
 
       {users.map((user) => (
-        <div key={user._id} className="border p-3 mt-3">
+        <div key={user._id} className="p-3 mt-3">
           <p>
             <strong>ID:</strong> {user._id}
           </p>
@@ -51,6 +51,9 @@ function DisplayAll() {
 
           <p>
             <strong>Age:</strong> {user.age}
+          </p>
+           <p>
+            <strong>Course:</strong> {user.course}
           </p>
         </div>
       ))}

@@ -39,6 +39,8 @@ function UpdateName() {
   };
 
   return (
+     <div className="flex justify-center items-center h-screen w-screen">
+        <div className="flex flex-col p-10 m-8 gap-5 rounded-2xl w-130 border border-black">
     <form
       onSubmit={handleSubmit}
       className="flex flex-col gap-5"
@@ -69,10 +71,12 @@ function UpdateName() {
         />
       </div>
 
-      <button type="submit">
+      <button type="submit" className="border border-blue-500 rounded-2xl p-1 w-full bg-blue-500 text-white">
         Update Name
       </button>
     </form>
+    </div>
+    </div>
   );
 }
 
